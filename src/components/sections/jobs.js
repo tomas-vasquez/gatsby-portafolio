@@ -187,6 +187,7 @@ const Jobs = () => {
   const tabs = useRef([]);
 
   const revealContainer = useRef(null);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   const focusTab = () => {
@@ -205,7 +206,10 @@ const Jobs = () => {
   };
 
   // Only re-run the effect if tabFocus changes
-  useEffect(() => focusTab(), [focusTab]);
+  useEffect(() => {
+    focusTab();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Focus on tabs when using up & down arrow keys
   const onKeyDown = (e) => {
