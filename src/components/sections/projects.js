@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
 import { srConfig } from "@config";
 import sr from "@utils/sr";
-import { Icon } from "@components/icons";
+import Icon from "@components/Icon";
 import { Col, Container } from "reactstrap";
 
 const StyledProjectsSection = styled.section`
@@ -245,12 +245,12 @@ const Projects = () => {
                         <header>
                           <div className="project-top">
                             <div className="folder">
-                              <Icon name="Folder" />
+                              <Icon icon="folder" />
                             </div>
                             <div className="project-links">
                               {node.url && (
                                 <a href={node.url} aria-label="GitHub Link">
-                                  <Icon name="GitHub" />
+                                  <Icon icon="github" />
                                 </a>
                               )}
                               {/* {node.external && (

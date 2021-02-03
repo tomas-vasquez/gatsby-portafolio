@@ -26,6 +26,8 @@ import {
   faVolumeDown,
   faPlay,
   faPause,
+  faHeart,
+  faFolder,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
@@ -87,13 +89,17 @@ const getIcon = (icon) => {
       return faUser;
 
     case "hear":
-      return faGlobe;
+      return faHeart;
+
+    case "folder":
+      return faFolder;
 
     case "arrowDown":
       return faArrowDown;
 
     case "send":
       return faPaperPlane;
+
     case "gmail":
       return faEnvelope;
 

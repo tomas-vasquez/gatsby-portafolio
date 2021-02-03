@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { socialMedia } from '@config';
-import { Side } from '@components';
-import { Icon } from '@components/icons';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { socialMedia } from "@config";
+import { Side } from "@components";
+import Icon from "../components/Icon";
 
 const StyledSocialList = styled.ul`
   display: flex;
@@ -14,10 +14,10 @@ const StyledSocialList = styled.ul`
   list-style: none;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
-    width: 1px;
-    height: 90px;
+    width: 2px;
+    height: 60px;
     margin: 0 auto;
     background-color: var(--light-slate);
   }
@@ -50,7 +50,7 @@ const Social = ({ isHome }) => (
         socialMedia.map(({ url, name }, i) => (
           <li key={i}>
             <a href={url} aria-label={name}>
-              <Icon name={name} />
+              <Icon icon={name} />
             </a>
           </li>
         ))}
