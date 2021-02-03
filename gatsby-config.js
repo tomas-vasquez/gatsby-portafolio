@@ -1,9 +1,10 @@
 const config = require("./src/config");
-const githubApiQuery = require("./github-api");
 
 // init. environment variables
 const dotenv = require("dotenv");
 dotenv.config();
+
+console.log("GITHUB_LOGIN", process.env.GITHUB_LOGIN);
 
 module.exports = {
   siteMetadata: {
@@ -152,7 +153,42 @@ module.exports = {
         token: `${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
 
         // GraphQLquery: defaults to a search query
-        graphQLQuery: githubApiQuery,
+        graphQLQuery: (githubApiQuery = `
+        query($github_login: String!) {
+          user(login: $github_login) {
+            repositories(first: 12, orderBy: {field: STARGAZERS, direction: DESC}) {
+               nodes {
+                id
+                name
+                description
+                url
+                updatedAt
+                forkCount
+                openGraphImageUrl
+                stargazers {
+                  totalCount
+                }
+                readme: object(expression: "master:README.md") {
+                  ... on Blob {
+                    text
+                  }
+                }
+                licenseInfo {
+                  id
+                }
+                primaryLanguage {
+                  name
+                }
+                languages(first: 10) {
+                  nodes {
+                    name
+                  }
+                }
+               }
+              }
+            }
+        }
+        `),
 
         // variables: defaults to variables needed for a search query
         variables: {
