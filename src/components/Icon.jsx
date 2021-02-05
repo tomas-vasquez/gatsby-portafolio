@@ -28,6 +28,7 @@ import {
   faPause,
   faHeart,
   faFolder,
+  faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
@@ -105,6 +106,10 @@ const getIcon = (icon) => {
 
     case "wathsapp":
       return faWhatsapp;
+
+    case "external":
+      return faExternalLinkAlt;
+
     case "star":
       return faStar;
 

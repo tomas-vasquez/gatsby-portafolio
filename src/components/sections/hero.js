@@ -45,12 +45,11 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Tomas Vasquez</h2>;
+  const two = <h2 className="big-heading">Tomás Vasquez</h2>;
   const four = (
     <p>
-      I'm a software engineer based in Boston, MA specializing in building (and
-      occasionally designing) exceptional websites, applications, and everything
-      in between.
+      I'm a software engineer based in Bolivia specializing in building web
+      sites and applications and everything in between.
     </p>
   );
   const five = (

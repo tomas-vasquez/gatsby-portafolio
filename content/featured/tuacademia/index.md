@@ -1,11 +1,12 @@
 ---
-date: '3'
-title: 'Tu academia'
-cover: './capture.jpg'
-github: 'https://github.com/tomasdetloging/openacademy-nextjs'
-external: 'https://open-academy.vercel.app/'
+date: "3"
+title: "Tu academia"
+cover: "./capture.jpg"
+github: "https://github.com/tomasdetloging/openacademy-nextjs"
+external: "https://open-academy.vercel.app/"
 tech:
   - Next.js
+  - React.js
   - Express.js
   - MongoDB
 showInProjects: true

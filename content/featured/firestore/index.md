@@ -1,14 +1,14 @@
 ---
-date: '2'
-title: 'Spotify Profile'
-cover: './demo.png'
-github: 'https://github.com/bchiang7/spotify-profile'
-external: 'https://spotify-profile.herokuapp.com/'
+date: "2"
+title: "Electronicos Store"
+cover: "./demo.png"
+github: "https://github.com/tomas-vasquez/store-nextjs"
+external: "http://store-nextjs.vercel.app"
 tech:
   - Next.js
+  - React.js
   - Firebase
-  - Google API
 showInProjects: true
 ---
 
-A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
+A small and customizable online store capable of being hosted on a static page server; built with the purpose that its maintenance is economical.

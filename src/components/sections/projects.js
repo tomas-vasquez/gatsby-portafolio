@@ -202,7 +202,6 @@ const Projects = () => {
   }, []);
 
   const GRID_LIMIT = 6;
-
   const repos = data.allGithubData?.nodes[0].data.user.repositories.nodes;
   const firstSix = repos.slice(0, GRID_LIMIT);
   const reposToShow = showMore ? repos : firstSix;
@@ -249,7 +248,11 @@ const Projects = () => {
                             </div>
                             <div className="project-links">
                               {node.url && (
-                                <a href={node.url} aria-label="GitHub Link">
+                                <a
+                                  href={node.url}
+                                  target="preview1"
+                                  aria-label="GitHub Link"
+                                >
                                   <Icon icon="github" />
                                 </a>
                               )}

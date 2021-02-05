@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
-import sr from '@utils/sr';
-import { srConfig } from '@config';
-import { Icon } from '@components/icons';
+import React, { useEffect, useRef } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import styled from "styled-components";
+import sr from "@utils/sr";
+import { srConfig } from "@config";
+import Icon from "../Icon";
 
 const StyledProject = styled.div`
   display: grid;
@@ -200,7 +200,6 @@ const StyledProject = styled.div`
 
     a {
       width: 100%;
-      background-color: var(--green);
       border-radius: var(--border-radius);
       vertical-align: middle;
 
@@ -216,7 +215,7 @@ const StyledProject = styled.div`
       }
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 100%;
@@ -226,7 +225,6 @@ const StyledProject = styled.div`
         bottom: 0;
         z-index: 3;
         transition: var(--transition);
-        background-color: var(--navy);
         mix-blend-mode: screen;
       }
     }
@@ -234,7 +232,6 @@ const StyledProject = styled.div`
     .img {
       border-radius: var(--border-radius);
       mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1) brightness(90%);
 
       @media (max-width: 768px) {
         object-fit: cover;
@@ -281,7 +278,9 @@ const Featured = () => {
   const revealProjects = useRef([]);
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    revealProjects.current.forEach((ref, i) =>
+      sr.reveal(ref, srConfig(i * 100))
+    );
   }, []);
 
   return (
@@ -297,11 +296,17 @@ const Featured = () => {
             const { external, title, tech, github, cover } = frontmatter;
 
             return (
-              <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
+              <StyledProject
+                key={i}
+                ref={(el) => (revealProjects.current[i] = el)}
+              >
                 <div className="project-content">
                   <p className="project-overline">Featured Project</p>
                   <h3 className="project-title">{title}</h3>
-                  <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+                  <div
+                    className="project-description"
+                    dangerouslySetInnerHTML={{ __html: html }}
+                  />
 
                   {tech.length && (
                     <ul className="project-tech-list">
@@ -313,21 +318,34 @@ const Featured = () => {
 
                   <div className="project-links">
                     {github && (
-                      <a href={github} aria-label="GitHub Link">
-                        <Icon name="GitHub" />
+                      <a
+                        href={github}
+                        target="preview1"
+                        aria-label="GitHub Link"
+                      >
+                        <Icon icon="github" />
                       </a>
                     )}
                     {external && (
-                      <a href={external} aria-label="External Link" className="external">
-                        <Icon name="External" />
+                      <a
+                        href={external}
+                        target="preview2"
+                        aria-label="External Link"
+                        className="external"
+                      >
+                        <Icon icon="external" />
                       </a>
                     )}
                   </div>
                 </div>
 
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
-                    <Img fluid={cover.childImageSharp.fluid} alt={title} className="img" />
+                  <a href={external ? external : github ? github : "#"}>
+                    <Img
+                      fluid={cover.childImageSharp.fluid}
+                      alt={title}
+                      className="img"
+                    />
                   </a>
                 </div>
               </StyledProject>
