@@ -12,7 +12,7 @@ module.exports = {
     },
     {
       name: "wathsapp",
-      url: "https://api.whatsapp.com/send?phone=59177649384",
+      url: "https://api.whatsapp.com/send?phone=59162014913",
     },
   ],
 

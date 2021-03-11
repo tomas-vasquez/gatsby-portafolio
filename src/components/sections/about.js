@@ -131,10 +131,10 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="numbered-heading">About Me</h2>
-
       <div className="inner">
         <StyledText>
+          <h2 className="numbered-heading">About Me</h2>
+
           <div>
             <p>
               Began my academic training at the university studying Informatics
